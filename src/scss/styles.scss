@@ -1,3 +1,294 @@
+@import "../scss/reset.scss";
+@import "../scss/fonts.scss";
+@import "../scss/variables.scss";
+@import "../scss/mixin.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
 body {
-  background-color: red;
+  font-family: TT Norms, sans-serif;
+}
+
+// CONTAINER-MAIN
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: map-get($gradients, gradient-soft);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container-main {
+  width: 1320px;
+  margin: 0 auto;
+}
+
+// HEADER START
+.container-navigation-information {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+  }
+
+  &__logotype {
+  }
+}
+
+.header-information {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__item {
+  }
+
+  &__info {
+    font-size: 1.6rem;
+    font-weight: map-get($font-weight, regular);
+    line-height: 1.19;
+    color: map-get($colors, main-white);
+
+    @include list-item-dot;
+  }
+
+  &__tel {
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: map-get($font-weight, bold);
+    line-height: 1.19;
+    color: map-get($colors, main-white);
+
+    @include list-item-dot;
+  }
+
+  &__facebook {
+    @include list-item-dot;
+  }
+}
+
+.language {
+  &__item {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: map-get($font-weight, bold);
+    color: map-get($colors, main-white);
+  }
+
+  &__input {
+    -webkit-appearance: none;
+  }
+
+  &__input:checked ~ &__caption {
+    background-color: map-get($colors, accent);
+  }
+
+  &__caption {
+    padding: 5px 6px;
+    border-radius: 8px;
+  }
+}
+
+.header-navigation {
+  display: flex;
+  justify-content: end;
+
+  margin-top: 16px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: map-get($font-weight, bold);
+    color: map-get($colors, main-white);
+    line-height: 1.66;
+
+    &:hover {
+      @include navigation-hover-and-select;
+    }
+
+    &--selected {
+      @include navigation-hover-and-select;
+    }
+  }
+}
+
+// HEADER END
+
+// HERO START
+.container-hero-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+
+  flex-grow: 1;
+  background-image: linear-gradient(
+      180deg,
+      rgba(50, 50, 100, 0) 16.67%,
+      #323264 100%
+    ),
+    url(../img/vectors/Symbol-hero.svg), url(../img/vectors/symbol-bg-hero.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 200px, 690px, 800px;
+  background-position: bottom;
+}
+
+.hero-text {
+  width: 600px;
+  text-align: center;
+  font-size: 3.8rem;
+  font-weight: map-get($font-weight, bold);
+  line-height: 1.18;
+  color: map-get($colors, main-white);
+
+  margin-bottom: 290px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 260px;
+}
+// HERO END
+
+// HERO ABOUT US START
+.navigation-site-link {
+  @include navigation-site-link;
+  color: map-get($colors, gray-text);
+}
+
+.site-title {
+  font-size: 4.2rem;
+  font-weight: map-get($font-weight, bold);
+  line-height: 1.19;
+  color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: map-get($gradients, gradient-red-text);
+
+  margin-top: 5px;
+  margin-bottom: 68px;
+}
+
+.about-benefits {
+  width: 100%;
+  background: map-get($gradients, gradient-supersoft);
+  display: flex;
+  flex-direction: column;
+
+  &__container-sm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__list {
+  }
+
+  &__item {
+    font-size: 4.2rem;
+    font-weight: map-get($font-weight, bold);
+    line-height: 1.19;
+    color: map-get($colors, gray-text);
+  }
+}
+
+.about-benefits-information {
+  width: 600px;
+
+  &__title {
+    margin-bottom: 20px;
+    
+    font-size: 3.2rem;
+    font-weight: map-get($font-weight, middle);
+    line-height: 1.19;
+    color: map-get($colors, main-white);
+  }
+
+  &__text {
+    font-size: 2.1rem;
+    font-weight: map-get($font-weight, middle);
+    line-height: 1.43;
+    color: map-get($colors, main-white);
+  }
+}
+
+.about-benefits__container-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding-bottom: 62px;
+}
+
+.benefits-card {
+  display: flex;
+  margin-bottom: 18px;
+
+  &__list {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    background-color: map-get($colors, main-white);
+    width: 92px;
+    height: 92px;
+    border-radius: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+  }
+
+  &__icon {
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: map-get($font-weight, middle);
+    line-height: 1.66;
+    color: map-get($colors, active-regular);
+
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: map-get($font-weight, regular);
+    line-height: 1.44;
+    color: map-get($colors, main-white);
+  }
 }

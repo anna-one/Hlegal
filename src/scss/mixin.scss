@@ -1,0 +1,55 @@
+// MIXINS HEADER &&& NAV
+
+@mixin list-item-dot {
+  &::before {
+    content: "";
+    vertical-align: middle;
+    margin-right: 10px;
+
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: map-get($colors, main-white);
+  }
+}
+
+@mixin navigation-hover-and-select {
+  color: map-get($colors, accent);
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+
+    height: 2px;
+    width: 100%;
+
+    background-color: map-get($colors, accent);
+  }
+}
+
+//
+
+// NAVIGATION SITE LINK
+
+@mixin navigation-site-link {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: map-get($font-weight, middle);
+  line-height: 1.21;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  &::after {
+    content: "";
+    border-top: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    height: 5px;
+    width: 5px;
+  }
+}
+
+//
