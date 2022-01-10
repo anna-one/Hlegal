@@ -36,11 +36,12 @@
 @mixin navigation-site-link {
   font-size: 1.4rem;
   text-transform: uppercase;
-  font-weight: map-get($font-weight, middle);
+  font-weight: map-get($font-weight, bold-text);
   line-height: 1.21;
   display: flex;
   gap: 6px;
   align-items: center;
+  letter-spacing: 1px;
 
   &::after {
     content: "";
@@ -53,3 +54,14 @@
 }
 
 //
+
+// SITE TITLE 
+@mixin site-title {
+  font-size: 4.2rem;
+  font-weight: map-get($font-weight, bold-text);
+  line-height: 1.19;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: map-get($gradients, gradient-red-text);
+}

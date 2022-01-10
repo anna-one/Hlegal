@@ -1,6 +1,8 @@
 $colors: (
   // WHITE
   main-white: #ffffff,
+  // BLACK
+  main-black: #000000,
   // MAIN
   main-regular: #323264,
   main-alt: #46466e,
@@ -31,7 +33,7 @@ $gradients: (
 
 
 $font-weight: (
-    regular: 400,
-    medium: 500,
-    bold: 700,
+    regular-text: 400,
+    medium-text: 500,
+    bold-text: 700,
 )
